@@ -4,22 +4,18 @@
 ## Users ##
 --------------
 
-##Elves##
-
-##Children##
+##Users##
 
 ##Wishes##  
 
-##a child has many wishes##
-##an elf has many wishes##
-## a wish belongs to a child and an elf##
+## a user has many wishes ##
+## a wish belongs to a user##
+
 
 ## Wish Table
 ## id   |   item    |   child_id     |    elf_id    |    build_time   |   status    |   due_date
+            string        integer         integer         integer         string         date
 
 ## User table
-## id   |   name    |     age     |     role      |
-
-## role
-##  id    |   role_name   |
-              # elf or child
+## id   |   name    |     age     |     is_elf      |     email       |    password
+##          string        integer       boolean     |     string      |     strings
