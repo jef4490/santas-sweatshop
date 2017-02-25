@@ -1,21 +1,9 @@
-# santas-workshop
-## Concerns ##
+Welcome to Santa's Workshop!
 
-## Users ##
---------------
+Here, you make a Christmas Wish and an elf will build to your precise specifications.
 
-##Users##
+We pride ourself on our craftsmanship and quality service.
 
-##Wishes##  
+All orders filled annually on December, 25th.
 
-## a user has many wishes ##
-## a wish belongs to a user##
-
-
-## Wish Table
-## id   |   item    |   child_id     |    elf_id    |    build_time   |   status    |   due_date
-            string        integer         integer         integer         string         date
-
-## User table
-## id   |   name    |     age     |     is_elf      |     email       |    password
-##          string        integer       boolean     |     string      |     strings
+Test from controller.
