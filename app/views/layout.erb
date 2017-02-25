@@ -3,11 +3,96 @@
   <head>
     <meta charset="utf-8">
     <title>Santa's Sweætshop</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas');
+
+    body {
+        background-color: rgb(98,183,97);
+        color: white;
+        font-size: 1.1em;
+        font-family: georgia, arial, serif;
+    }
+
+    h1.logo {
+      font-family: 'Mountains of Christmas', cursive;
+      text-shadow: 2px 2px rgb(255,136,136);
+    }
+
+    h2.logo {
+      font-family: 'Mountains of Christmas', cursive;
+      text-shadow: 1px 1px rgb(255,136,136);
+    }
+
+    div.page-spaceing {
+      width: 75%;
+      background-color: white;
+      /*background-clip: padding-box;*/
+      position: relative;
+      border-radius: 6px;
+      color: #292f33;
+      font-size: 14px;
+      margin: auto;
+    }
+
+    div.registration h1 {
+      color: black;
+    }
+
+    .registration {
+       /*background-color: #eee;*/
+       padding-top: 80px;
+       padding-bottom: 50px;
+       width: 432px;
+       margin: 0 auto;
+       clear;
+    }
+
+    .login {
+       /*background-color: #eee;*/
+       padding-top: 40px;
+       padding-bottom: 50px;
+       width: 432px;
+       margin: 0 auto;
+       clear;
+    }
+
+    form {
+      /*background-color: #ddd;*/
+      margin: 0 auto;
+      /*padding-left: 33%;*/
+      clear;
+    }
+
+    form input {
+      width: 372px;
+      padding: 10px;
+      font-size: 18px;
+      float: center;
+      border: 1px solid #e1e8ed;
+      background-color: #fff;
+      border-radius: 3px;
+      line-height: 20px;
+    }
+
+
+   form input; focus{
+      border: 1px solid red;
+    }
+
+    h1.logo {
+      font-size: 3.0em;
+    }
+
+    h2 {
+
+    }
+
+    </style>
   </head>
   <body>
-    <h1>Santa's Sweætshop</h1>
-    <h2>0 North Pole, Arctic Circle, 00000-0010</h2>
-    <hr>
+    <h1 class="logo">Santa's Sweætshop</h1>
+    <h2 class="logo">1 North Pole, Arctic Circle</h2>
+    <!-- <hr> -->
     <%= yield %>
   </body>
 </html>
