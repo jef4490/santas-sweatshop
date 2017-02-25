@@ -1,4 +1,4 @@
-Welcome to Santa's Workshop!
+Welcome to Santa's Sweætshop!
 
 Here, you make a Christmas Wish and an elf will build to your precise specifications.
 
