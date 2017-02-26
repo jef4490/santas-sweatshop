@@ -1,1 +1,17 @@
-Hello from Wishes!
+<div class="page-spaceing-wishes">
+  <div class="wish-header">
+    <h1><%= "#{@user.name}'s Wishes:" %></h1>
+  </div>
+</div>
+
+<div class="page-spaceing-wishes">
+  <div class="wish-index">
+    <% @wishes.each do |wish| %>
+      <div class="wish-individual">
+        <p><label>Wish: <%= wish.toy %></label><a href="/wishes/<%=wish.id%>"><i class="material-icons">mode_edit</i></a></p>
+        <p><label>Status: <%= wish.status %></label></p>
+        <p><label>Time Remaining: <%= "#{wish.build_time} Days"%><a href="/wishes/<%=wish.id%>/delete"><i class="fa fa-trash w3-xlarge"></i></a></label></p>
+      </div>
+    <% end %>
+  </div>
+</div>
