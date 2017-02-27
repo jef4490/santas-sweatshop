@@ -1,15 +1,15 @@
 
 development:
   adapter: postgresql
-  database: devej5lsgcubdc
+  database: AQUA_URL
 
 test:
   adapter: postgresql
-  database: devej5lsgcubdc
+  database: AQUA_URL
 
 production:
   adapter: postgresql
-  database: devej5lsgcubdc
-  username: lhvzwtidkmbqmm
-  password: 627c3640e7b613be34fcb875958ae7ea48db60f399bffe241fffb0b3d8c7d938
-  host: ec2-54-235-112-37.compute-1.amazonaws.com
+  database: AQUA_URL
+  username: xknpgrvzctikkh
+  password: fde2022d6a7418a8dac1d814a031c7dbe9d24ee6120d2210560b86936a6ac7b6
+  host: ec2-54-243-124-240.compute-1.amazonaws.com

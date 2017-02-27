@@ -8,7 +8,7 @@ configure :development do
 end
 
 configure :production do
-  db = URI.parse(ENV['devej5lsgcubdc'] || 'postgres://localhost/mydb')
+  db = URI.parse(ENV['AQUA_URL'] || 'postgres://localhost/mydb')
 
   ActiveRecord::Base.establish_connection(
       :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
