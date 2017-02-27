@@ -1,0 +1,15 @@
+
+development:
+  adapter: postgresql
+  database: devej5lsgcubdc
+
+test:
+  adapter: postgresql
+  database: devej5lsgcubdc
+
+production:
+  adapter: postgresql
+  database: devej5lsgcubdc
+  username: lhvzwtidkmbqmm
+  password: 627c3640e7b613be34fcb875958ae7ea48db60f399bffe241fffb0b3d8c7d938
+  host: ec2-54-235-112-37.compute-1.amazonaws.com
