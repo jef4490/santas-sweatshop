@@ -34,7 +34,16 @@ class UserController < ApplicationController
   end
 
   get '/users/profile' do
-    binding.pry
+    if Helpers.is_logged_in?(session)
+      @user = Helpers.current_user(session)
+      redirect "/users/#{@user.id}/profile"
+    end
+  end
+
+  get '/users/:id/profile' do
+    redirect "/users/login" if !Helpers.is_logged_in?(session)
+    @user = User.find(params[:id])
+    erb :'/users/show'
   end
 
   get '/failure' do

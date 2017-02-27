@@ -7,6 +7,8 @@ GEM
       activemodel (= 5.0.1)
       activesupport (= 5.0.1)
       arel (~> 7.0)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activesupport (5.0.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -35,6 +37,7 @@ GEM
     minitest (5.10.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -83,8 +86,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  activerecord-postgresql-adapter
   bcrypt
   capybara
+  pg
   pry
   rake
   require_all

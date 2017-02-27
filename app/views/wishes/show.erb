@@ -1,3 +1,10 @@
-Hello from the show page:
-
-<%= @wish.toy %>
+<div class="page-spaceing">
+  <div class="login">
+    <form method="post" action="/wishes/<%=@wish.id%>">
+      <label>Wish:
+      <input id="wish" type="text" name="wish[toy]" value="<%=@wish.toy%>"placeholder="What would you like for Christmas?" /></label>
+      <p><label>Due Date:<input type="date" name="wish[due_date]" value="<%=@wish.due_date%>"/></p></label>
+      <p><input type="Submit" value="Edit"/></p>
+    </form>
+  </div>
+</div>

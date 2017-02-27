@@ -36,6 +36,13 @@ class WishController < ApplicationController
     end
   end
 
+  post '/wishes/:id' do
+    # binding.pry
+    @wish = Wish.find(params[:id])
+    @wish.update(params[:wish])
+    redirect "/wishes"
+  end
+
   get '/wishes/:id/delete' do
     @wish = Wish.find(params[:id])
     if Helpers.current_user(session).id == @wish.user_id
