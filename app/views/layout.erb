@@ -9,12 +9,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
     @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas');
+    @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+    @import url('https://fonts.googleapis.com/css?family=Cabin');
 
     body {
         background-color: rgb(98,183,97);
         color: white;
         font-size: 1.1em;
         font-family: georgia, arial, serif;
+    }
+
+    header {
+      padding-left: 2em;
     }
 
     h1.logo {
@@ -65,21 +71,35 @@
       margin-bottom: 4.5em;
     }
 
+    .delete-buttons {
+      /*background-color: black;*/
+      /*margin: auto;*/
+    }
+
     .delete-no {
-      float: right;
+      float: left;
       width: 50%;
-      margin: 0 auto;
+      /*margin: 0 auto;*/
     }
 
     .delete-yes {
       float: left;
       width: 50%;
-      margin: 0 auto;
-
+      /*margin: 0 auto;*/
     }
 
-    button {
+    .delete-center {
+      width: 30%;
       margin: 0 auto;
+    }
+
+    /*.delete-yes a{
+      margin: auto;
+    }*/
+
+    button {
+      font-size: 20px;
+      /*margin: 0 auto;*/
     }
 
     .clearfix {
@@ -198,6 +218,7 @@
       /*background: red;*/
       top: 30px;
       right: 10px;
+      z-index: 1;
     }
 
     .wish-individual i.material-icons {
@@ -205,6 +226,101 @@
     }
 
     .wish-individual i.fa {
+      float: right;
+    }
+
+    .dashboard-wrapper {
+      width: 100%;
+    }
+
+    .dashboard-left {
+      float: left;
+      color: black;
+      width: 23%;
+      margin-left: 2%;
+      margin-right: 2%;
+      background-color: white;
+      border-radius: 10px;
+      height:800px;
+      overflow: scroll;
+    }
+
+    .dashboard-create {
+      float: left;
+      width: 55%;
+      margin: 0 auto;
+      color: black;
+      background-color: white;
+      padding-top: 1.25em;
+      padding-bottom: 15px;
+      border-radius: 10px;
+      font-family: 'Indie Flower', cursive;
+      font-size: 20px;
+    }
+
+    .dashboard-create-row {
+      margin: 0 auto;
+      width: 55%;
+      /*background-color: #eee;*/
+      font-size: 2.25em;
+    }
+
+    .dashboard-feed {
+      margin-top: 20px;
+      float: left;
+      width: 55%;
+      color: black;
+      background-color: white;
+      border-radius: 10px;
+      padding-top: .25em;
+      padding-bottom: .25em
+    }
+
+    .dashboard-feed-wish-individual {
+      background-color: #eee;
+      width: 80%;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding: .5em;
+    }
+    .dashboard-feed-wish-individual p.wish-data {
+      margin-left: 10em;
+    }
+
+    .dashboard-create-row i{
+      padding: .37em;
+      float:right;
+    }
+
+    .dashboard-left-col {
+      /*background-color: #eee;*/
+      padding: 5px;
+      padding-right: 15px;
+      margin: 0 auto;
+    }
+
+    .dashboard-left-col h3{
+      padding-left: .55em;
+      font-family: 'Cabin', serif;
+    }
+
+    div.dashboard-wish-individual {
+      background-color: #eee;
+      padding-left: 15px;
+      padding-top: 1px;
+      padding-bottom: 5px;
+      font-size: 18px;
+      font-family: 'Cabin', serif;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      /*border: solid;*/
+      border-width: thin;
+      margin-left: 10px;
+    }
+
+    .dashboard-left-col i{
       float: right;
     }
 
@@ -219,8 +335,9 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/users/profile">Profile</a>
         <% if Helpers.is_logged_in?(session) %>
+         <a href="/users/dashboard">Dashboard</a>
+         <a href="/users/profile">Profile</a>
          <a href="/users/logout">Log Out</a>
          <% else %>
          <a href="/users/login">Log in</a>

@@ -1,1 +1,29 @@
-Make a new wish: <a href="/wishes/new"><i class="fa fa-plus" aria-hidden="true"></i></a>
+<div class="dashboard-wrapper">
+  <div class="dashboard-left">
+    <div class="dashboard-left-col">
+      <h3>Your Wishes:</h3>
+      <%@wishes.each do |wish| %>
+        <div class="dashboard-wish-individual">
+          <p>Wish: <%=wish.toy%><a href="/wishes/<%=wish.id%>"><i class="material-icons">mode_edit</i></a></p>
+          <p>Status: <%=wish.status%></p>
+          <p>Time Remaining: <%=wish.build_time%> Days</p>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="dashboard-create">
+    <div class="dashboard-create-row">
+      Make a new wish <a href="/wishes/new"><i class="fa fa-plus w3-xxlarge" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="dashboard-feed">
+    <% @wishes_all.reverse.each do |wish| %>
+    <div class="dashboard-feed-wish-individual">
+      <p><% @user = User.find(wish.user_id)%><%= @user.name %> wished for:</p>
+      <p class="wish-data">Wish: <%=wish.toy%></p>
+      <p class="wish-data">Status: <%=wish.status%></p>
+      <p class="wish-data">Time Remaining: <%=wish.build_time%> Days</p>
+    </div>
+    <% end %>
+  </div>
+</div>

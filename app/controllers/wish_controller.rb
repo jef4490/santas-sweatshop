@@ -4,7 +4,6 @@ class WishController < ApplicationController
     if Helpers.is_logged_in?(session)
       @user = Helpers.current_user(session)
       @wishes = @user.wishes
-      # binding.pry
       erb :'wishes/index'
     else
       redirect "/failure"
@@ -25,7 +24,6 @@ class WishController < ApplicationController
     @wish.status = "Pending Assignment"
     @wish.build_time = rand(1..5)
     @wish.save
-    binding.pry
     redirect "/wishes"
   end
 
@@ -42,6 +40,16 @@ class WishController < ApplicationController
     @wish = Wish.find(params[:id])
     if Helpers.current_user(session).id == @wish.user_id
       erb :'/wishes/delete'
+    else
+      redirect "/failure"
+    end
+  end
+
+  post '/wishes/:id/delete' do
+    wish = Wish.find(params[:id])
+    if Helpers.current_user(session).id == wish.user_id
+      wish.delete
+      redirect "/wishes"
     else
       redirect "/failure"
     end

@@ -16,7 +16,9 @@
 
 
 <div class="page-spaceing-delete clearfix">
-  <div class="delete-yes"><a href="/wishes/<%=@wish.id%>"><button type="button">Cancel</button></a></div>
+  <div class="delete-buttons clearfix">
+    <div class="delete-yes"><div class="delete-center"><a href="/wishes/<%=@wish.id%>"><button type="button">Cancel</button></a></div></div>
 
-  <div class="delete-no"><button type="submit" formaction="/wishes/<%=@wish.id%>/delete" formmethod="POST">Delete</button></div>
+    <div class="delete-no"><form method="POST" action="/wishes/<%=@wish.id%>/delete" id="delete-button"><div class="delete-center"><button type="submit" form="delete-button">Delete</button></div></form></div>
+  </div>
 </div>

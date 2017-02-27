@@ -13,6 +13,8 @@ class UserController < ApplicationController
   end
 
   get '/users/dashboard' do
+    @wishes = Helpers.current_user(session).wishes
+    @wishes_all = Wish.all
     erb :'users/dashboard'
   end
 
