@@ -19,8 +19,9 @@
   <div class="dashboard-feed">
     <% @wishes_all.reverse.each do |wish| %>
     <div class="dashboard-feed-wish-individual">
+      <p class="date-time"><% @dt = wish.created_at %><%=@dt.month%>/<%=@dt.day%>/<%=@dt.year%>- <%=@dt.hour%>:<%=@dt.min%></p>
       <p><% @user = User.find(wish.user_id)%><%= @user.name %> wished for:</p>
-      <p class="wish-data">Wish: <%=wish.toy%></p>
+      <p class="wish-data wish"><%=wish.toy%></p>
       <p class="wish-data">Status: <%=wish.status%></p>
       <p class="wish-data">Time Remaining: <%=wish.build_time%> Days</p>
     </div>

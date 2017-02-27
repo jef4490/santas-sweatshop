@@ -13,20 +13,24 @@
 ActiveRecord::Schema.define(version: 20170225154905) do
 
   create_table "users", force: :cascade do |t|
-    t.string  "email"
-    t.string  "password_digest"
-    t.string  "name"
-    t.integer "age"
-    t.boolean "is_elf"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "name"
+    t.integer  "age"
+    t.boolean  "is_elf"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "wishes", force: :cascade do |t|
-    t.string  "toy"
-    t.integer "user_id"
-    t.integer "elf_id"
-    t.integer "build_time"
-    t.string  "status"
-    t.date    "due_date"
+    t.string   "toy"
+    t.integer  "user_id"
+    t.integer  "elf_id"
+    t.integer  "build_time"
+    t.string   "status"
+    t.date     "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

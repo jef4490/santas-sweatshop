@@ -7,6 +7,7 @@ class CreateWishes < ActiveRecord::Migration[5.0]
       t.integer :build_time
       t.string :status
       t.date :due_date
+      t.timestamps
     end
   end
 end

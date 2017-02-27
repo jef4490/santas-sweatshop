@@ -13,11 +13,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/register' do
+    session.clear
     erb :'register'
   end
 
   post '/register' do
-    user = User.new(params)
+    user = User.create(params)
     if user.save
       redirect "/users/login"
     else
