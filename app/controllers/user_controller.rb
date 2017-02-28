@@ -4,18 +4,19 @@ class UserController < ApplicationController
     erb :'users/index'
   end
 
+  get '/users/dashboard' do
+    redirect "/users/login" if !Helpers.is_logged_in?(session)
+    @wishes = Helpers.current_user(session).wishes
+    @wishes_all = Wish.all
+    erb :'users/dashboard'
+  end
+
   get '/users/login' do
     if Helpers.is_logged_in?(session)
       redirect "/users/dashboard"
     else
       erb :'users/login'
     end
-  end
-
-  get '/users/dashboard' do
-    @wishes = Helpers.current_user(session).wishes
-    @wishes_all = Wish.all
-    erb :'users/dashboard'
   end
 
   post '/users/login' do
