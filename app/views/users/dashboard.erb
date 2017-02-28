@@ -1,4 +1,7 @@
 <div class="dashboard-wrapper">
+
+  <!--Begin left column-->
+
   <div class="dashboard-left">
     <div class="dashboard-left-col">
       <h3>Your Wishes:</h3>
@@ -7,25 +10,39 @@
           <p>Wish: <%=wish.toy%><a href="/wishes/<%=wish.id%>"><i class="material-icons">mode_edit</i></a></p>
           <p>Status: <%=wish.status%></p>
           <p>Time Remaining: <%=wish.build_time%> Days</p>
-        </div>
+        </div> <!-- dashboard-wish-individual -->
       <%end%>
       <a href="/wishes"><h5>View All</h5></a>
-    </div>
-  </div>
+    </div> <!-- Dashboard left-col -->
+  </div> <!--Dashboard left-->
+
+
+  <!--End Left Column-->
+
+  <!--Create Wish bar -->
+
   <div class="dashboard-create">
     <div class="dashboard-create-row">
       Make a new wish <a href="/wishes/new"><i class="fa fa-plus w3-xxlarge" aria-hidden="true"></i></a>
-    </div>
-  </div>
+    </div> <!-- dashboard-create-row -->
+  </div>  <!-- dashboard-create -->
+
+  <!--End create wish bar-->
+
+  <!-- Begin Wishes Feed -->
+
   <div class="dashboard-feed">
     <% @wishes_all.reverse.each do |wish| %>
-    <div class="dashboard-feed-wish-individual">
-      <p class="date-time"><% @dt = wish.created_at %><%=@dt.month%>/<%=@dt.day%>/<%=@dt.year%>- <%=@dt.hour%>:<%=@dt.min%></p>
-      <p><% @user = User.find(wish.user_id)%><a href="/users/<%=@user.id%>/profile"><%= @user.name %></a> wished for:</p>
-      <p class="wish-data wish"><%=wish.toy%></p>
-      <p class="wish-data">Status: <%=wish.status%></p>
-      <p class="wish-data">Time Remaining: <%=wish.build_time%> Days</p>
-    </div>
+      <div class="dashboard-feed-wish-individual">
+        <p class="date-time"><% @dt = wish.created_at %><%=@dt.month%>/<%=@dt.day%>/<%=@dt.year%>- <%=@dt.hour%>:<%=@dt.min%></p>
+        <p><% @user = User.find(wish.user_id)%><a href="/users/<%=@user.id%>/profile"><%= @user.name %></a> wished for:</p>
+        <p class="wish-data wish"><%=wish.toy%></p>
+        <p class="wish-data">Status: <%=wish.status%></p>
+        <p class="wish-data">Time Remaining: <%=wish.build_time%> Days</p>
+      </div> <!-- dashboard-feed-wish-individual -->
     <% end %>
-  </div>
-</div>
+  </div> <!-- dashboard-feed -->
+
+  <!--End dashboard feed-->
+
+</div> <!--Dashboard wrapper -->
