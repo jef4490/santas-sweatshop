@@ -9,7 +9,7 @@ test:
 
 production:
   adapter: postgresql
-  database: AQUA_URL
+  database: HEROKU_POSTGRESQL_AQUA_URL
   username: xknpgrvzctikkh
   password: fde2022d6a7418a8dac1d814a031c7dbe9d24ee6120d2210560b86936a6ac7b6
   host: ec2-54-243-124-240.compute-1.amazonaws.com
